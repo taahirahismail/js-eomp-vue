@@ -1,6 +1,6 @@
 <template>
     <div class="footer">
-       <strong>&copy; If Books Could Kill</strong> <br>
+       <strong>&copy; If Books Could Kill</strong> <br><br>
        A Taahirah Ismail Company <br>
        2023
     </div>
@@ -15,5 +15,7 @@ export default {
 <style scoped>
 .footer {
     background-color: #b3c890;
+    padding: 20px;
+    font-size: 10px;
 }
 </style>
