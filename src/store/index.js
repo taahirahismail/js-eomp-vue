@@ -23,19 +23,19 @@ export default createStore({
       })
     },
     filterNonficProducts: (state) => {
-      state.products.filter((product) => product.genre === "nonfiction");
+      state.products.filter((product) => {product.genre === "nonfiction"});
     },
     filterRomanceProducts: (state) => {
-      state.products.filter((product) => product.genre === "romance");
+      state.products.filter((product) => {product.genre === "romance"});
     },
     filterCrimeMysProducts: (state) => {
-      state.products.filter((product) => product.genre === "crime");
+      state.products.filter((product) => {product.genre === "crime"});
     },
     filterHorrorProducts: (state) => {
-      state.products.filter((product) => product.genre === "horror");
+      state.products.filter((product) => {product.genre === "horror"});
     },
     filterKidsProducts: (state) => {
-      state.products.filter((product) => product.genre === "kids");
+      state.products.filter((product) => {product.genre === "kids"});
     }
   },
   actions: {
