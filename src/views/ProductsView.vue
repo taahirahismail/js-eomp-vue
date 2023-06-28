@@ -50,24 +50,6 @@ export default {
             },
             priceLTH() {
                 this.$store.commit("sortProductsLowToHigh")
-            },
-            showAll() {
-              this.$store.commit("filterAllProducts")
-            },
-            filterNonfic() {
-              this.$store.commit("filterNonficProducts")
-            },
-            filterRomance() {
-              this.$store.commit("filterRomanceProducts")
-            },
-            filterCrimeMys() {
-              this.$store.commit("filterCrimeMysProducts")
-            },
-            filterHorror() {
-              this.$store.commit("filterHorrorProducts")
-            },
-            filterKids() {
-              this.$store.commit("filterKidsProducts")
             }
         },
   computed: {

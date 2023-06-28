@@ -22,7 +22,7 @@
               <div class="mt-auto">
                 <p class="mt-2"> <strong>A Little Bit of Everything for Dummies</strong> <br>
                 <cite>by John Wiley & Sons</cite> </p>
-                <a href="./pages/products.html" class="btn btn-outline-primary w-100">View</a>
+                <a href="/products" class="btn btn-outline-primary w-100">View</a>
               </div>
             </div>
   
@@ -31,7 +31,7 @@
               <div class="mt-auto">
               <p class="mt-2"> <strong>Psycho</strong> <br>
                 <cite>by Robert Bloch</cite> </p>
-                <a href="./pages/products.html" class="btn btn-outline-primary w-100">View</a>
+                <a href="/products" class="btn btn-outline-primary w-100">View</a>
               </div>
             </div>
   
@@ -40,7 +40,7 @@
               <div class="mt-auto">
               <p class="mt-2"> <strong>The Killing Code</strong> <br>
                 <cite>by J. D. Kirk</cite> </p>
-                <a href="./pages/products.html" class="btn btn-outline-primary w-100">View</a>
+                <a href="/products" class="btn btn-outline-primary w-100">View</a>
               </div>
             </div>
           </div>
@@ -57,7 +57,7 @@
                 <div class="mt-auto">
                   <p class="mt-2"> <strong>Simplifying JavaScript</strong> <br>
                   <cite>by Joe Morgan</cite> </p>
-                  <a href="./pages/products.html" class="btn btn-outline-primary w-100">View</a>
+                  <a href="/products" class="btn btn-outline-primary w-100">View</a>
                 </div>
               </div>
     
@@ -66,7 +66,7 @@
                 <div class="mt-auto">
                   <p class="mt-2"> <strong>The Code for Love and Heartbreak</strong> <br>
                     <cite>by Robert Bloch</cite> </p>
-                    <a href="./pages/products.html" class="btn btn-outline-primary w-100">View</a>
+                    <a href="/products" class="btn btn-outline-primary w-100">View</a>
                 </div>
               </div>
     
@@ -75,7 +75,7 @@
                 <div class="mt-auto">
                   <p class="mt-2"> <strong>Lucy Lopez: Coding Star</strong> <br>
                     <cite>by Claudia Mills</cite> </p>
-                    <a href="./pages/products.html" class="btn btn-outline-primary w-100">View</a>
+                    <a href="/products" class="btn btn-outline-primary w-100">View</a>
                 </div>
               </div>
             </div>

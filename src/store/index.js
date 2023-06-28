@@ -21,21 +21,6 @@ export default createStore({
       state.products.sort((a, b) => {
         return b.price - a.price;
       })
-    },
-    filterNonficProducts: (state) => {
-      state.products.filter((product) => {product.genre === "nonfiction"});
-    },
-    filterRomanceProducts: (state) => {
-      state.products.filter((product) => {product.genre === "romance"});
-    },
-    filterCrimeMysProducts: (state) => {
-      state.products.filter((product) => {product.genre === "crime"});
-    },
-    filterHorrorProducts: (state) => {
-      state.products.filter((product) => {product.genre === "horror"});
-    },
-    filterKidsProducts: (state) => {
-      state.products.filter((product) => {product.genre === "kids"});
     }
   },
   actions: {
@@ -47,7 +32,7 @@ export default createStore({
     getProduct: async (context, id) => {
       fetch("http://localhost:3000/books/" + id)
       .then((res) => res.json())
-      .then((product) => context.commit("setProduct", product));
+      .then((product) => context.commit("setProducts", product));
     }
   }
 })
