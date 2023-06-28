@@ -11,20 +11,20 @@
     >
     <h5 class="p-3">Sort (price):</h5>
       <div class="btns">
-        <button id="htl-btn" class="sort-btns">High to Low</button>
-        <button id="lth-btn" class="sort-btns">Low to High</button>
+        <button id="htl-btn" class="sort-btns" @click="priceHTL">High to Low</button>
+        <button id="lth-btn" class="sort-btns" @click="priceLTH">Low to High</button>
       </div>
     </div>
 
     <div class="filtering d-flex align-items-center justify-content-center m-1 p-2">
         <h5 class="p-3">Filter (genre):</h5>
         <div class="btns">
-            <button class="button filter-btns" id="view-all-btn">View All</button>
-            <button id="nonfic-btn" class="filter-btns">Non-Fiction</button>
-            <button id="romance-btn" class="filter-btns">Romance</button>
-            <button id="crime-mystery-btn" class="filter-btns">Crime/Mystery</button>
-            <button id="horror-btn" class="filter-btns">Horror</button>
-            <button id="kids-btn" class="filter-btns">Children</button>
+            <button class="button filter-btns" id="view-all-btn" @click="showAll">View All</button>
+            <button id="nonfic-btn" class="filter-btns" @click="filterNonfic">Non-Fiction</button>
+            <button id="romance-btn" class="filter-btns" @click="filterRomance">Romance</button>
+            <button id="crime-mystery-btn" class="filter-btns" @click="filterCrimeMys">Crime/Mystery</button>
+            <button id="horror-btn" class="filter-btns" @click="filterHorror">Horror</button>
+            <button id="kids-btn" class="filter-btns" @click="filterKids">Children</button>
         </div>
     </div>
   </div>
@@ -44,6 +44,32 @@
 import ProductCardComp from "@/components/ProductCard-comp.vue";
 
 export default {
+  methods: {
+            priceHTL() {
+                this.$store.commit("sortProductsHighToLow")
+            },
+            priceLTH() {
+                this.$store.commit("sortProductsLowToHigh")
+            },
+            showAll() {
+              this.$store.commit("filterAllProducts")
+            },
+            filterNonfic() {
+              this.$store.commit("filterNonficProducts")
+            },
+            filterRomance() {
+              this.$store.commit("filterRomanceProducts")
+            },
+            filterCrimeMys() {
+              this.$store.commit("filterCrimeMysProducts")
+            },
+            filterHorror() {
+              this.$store.commit("filterHorrorProducts")
+            },
+            filterKids() {
+              this.$store.commit("filterKidsProducts")
+            }
+        },
   computed: {
     products() {
       return this.$store.state.products;

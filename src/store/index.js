@@ -11,6 +11,31 @@ export default createStore({
     },
     setProduct: (state, product) => {
       state.product = product;
+    },
+    sortProductsHighToLow: (state) => {
+      state.products.sort((a, b) => {
+        return a.price - b.price;
+      })
+    },
+    sortProductsLowToHigh: (state) => {
+      state.products.sort((a, b) => {
+        return b.price - a.price;
+      })
+    },
+    filterNonficProducts: (state) => {
+      state.products.filter((product) => product.genre === "nonfiction");
+    },
+    filterRomanceProducts: (state) => {
+      state.products.filter((product) => product.genre === "romance");
+    },
+    filterCrimeMysProducts: (state) => {
+      state.products.filter((product) => product.genre === "crime");
+    },
+    filterHorrorProducts: (state) => {
+      state.products.filter((product) => product.genre === "horror");
+    },
+    filterKidsProducts: (state) => {
+      state.products.filter((product) => product.genre === "kids");
     }
   },
   actions: {

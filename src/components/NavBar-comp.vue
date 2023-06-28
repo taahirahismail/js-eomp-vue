@@ -4,7 +4,7 @@
         <router-link class="routerlink" to="/about">About</router-link>
         <router-link class="routerlink" to="/admin">Admin</router-link>
         <router-link class="routerlink" to="/products">Products</router-link>
-        <router-link class="routerlink" to="/cart">Cart</router-link>
+        <a href="#myModal" class="routerlink">Cart</a>
     </nav>
 </template>
 

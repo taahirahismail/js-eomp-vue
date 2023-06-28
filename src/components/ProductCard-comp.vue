@@ -1,7 +1,5 @@
 <template>
-    
-
-    <div class="books-card">
+    <div class="books-cards">
         <span>
             <router-link :to="{name: 'product', params: {id: product.id}}" class="routerlink">
                 <img :src="product.img" :alt="product.name" class="p-2">
@@ -25,7 +23,7 @@
 </script>
 
 <style>
-.books-card {
+.books-cards {
     border: 1px solid black;
     margin: 5px;
     padding: 5px;
