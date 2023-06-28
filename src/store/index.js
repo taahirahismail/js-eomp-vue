@@ -32,7 +32,7 @@ export default createStore({
     getProduct: async (context, id) => {
       fetch("http://localhost:3000/books/" + id)
       .then((res) => res.json())
-      .then((product) => context.commit("setProducts", product));
+      .then((product) => context.commit("setProduct", product));
     }
   }
 })
