@@ -2,8 +2,9 @@
     <nav class="topnav">
         <router-link class="active routerlink" to="/">Home</router-link>
         <router-link class="routerlink" to="/about">About</router-link>
-        <router-link class="routerlink" to="/">Admin</router-link>
-        <router-link class="routerlink" to="/">Products</router-link>
+        <router-link class="routerlink" to="/admin">Admin</router-link>
+        <router-link class="routerlink" to="/products">Products</router-link>
+        <router-link class="routerlink" to="/cart">Cart</router-link>
     </nav>
 </template>
 
@@ -19,9 +20,13 @@ export default {
 }
 
 .routerlink {
-    color: #2c3e50;
+    color: black;
     text-decoration: none;
     font-size: 15px;
     padding: 5px;
+}
+
+.routerlink:hover {
+    color: #f5f0bb;
 }
 </style>

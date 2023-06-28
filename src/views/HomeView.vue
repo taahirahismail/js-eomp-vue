@@ -4,9 +4,7 @@
       <h1>Welcome to If Books Could Kill!</h1>
       <p>Ours won't, but just imagine they had the power. Find a book to kill your curiosity now.</p>
     </div>
-    <div>
-      this is where the button to the products page is supposed to go!
-    </div>
+    <a href="/products" class="btn btn-outline-primary">Shop Our Books!</a>
   </div>
 
   <div class="books-displays">

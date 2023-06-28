@@ -1,9 +1,11 @@
 <template>
-  <div class="about">
-    <h1>About Us</h1>
+  <div
+    class="mt-3 p-4 text-center border border-start-0 border-end-0 border-black heading"
+  >
+    <h1>About Us!</h1>
   </div>
 
-  <div>
+  <div class="card m-2 p-3 text-center blue-bg">
     <h4>If Books Could Kill, would they?</h4>
     <p>
       I think it depends. Ours won't commit homicide - or, book-icide? - but
@@ -32,16 +34,24 @@
       come!
     </p>
 
-    <ContactForm/>
+    <ContactForm />
   </div>
 </template>
 
 <script>
-import ContactForm from '@/components/ContactForm-comp.vue'
+import ContactForm from "@/components/ContactForm-comp.vue";
 
 export default {
-  components: {ContactForm}
+  components: { ContactForm },
 };
 </script>
 
-<style></style>
+<style>
+.heading {
+  background-color: #dbdfaa;
+}
+
+.blue-bg {
+  background-color: #73a9ad !important;
+}
+</style>
