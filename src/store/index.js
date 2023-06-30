@@ -40,12 +40,12 @@ export default createStore({
   },
   actions: {
     getProducts: async (context) => {
-      fetch("http://localhost:3000/books")
+      fetch("https://taahirahismail.github.io/api/js-eomp-data.json")
       .then ((res) => res.json())
       .then ((products) => context.commit("setProducts", products));
     },
     getProduct: async (context, id) => {
-      fetch("http://localhost:3000/books/" + id)
+      fetch("https://taahirahismail.github.io/api/js-eomp-data.json/" + id)
       .then((res) => res.json())
       .then((product) => context.commit("setProduct", product));
     }
