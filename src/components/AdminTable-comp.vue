@@ -10,15 +10,19 @@
       <td class="p-2 border border-black">{{ product.quantity }}</td>
       <td class="p-2 border border-black">R{{ product.price }}</td>
       <td class="p-2 border border-black">
-        <button class="btn btn-outline-primary">edit</button>
-        <button class="btn btn-outline-danger">delete</button>
+        <edit-modal-comp/>
+        <button class="btn btn-outline-danger" id="deleteBtn" @click="deleteBook(product.index)">delete</button>
       </td>
     </tr>
 </template>
 
 <script>
+  import EditModalComp from './EditModal-comp.vue';
+
     export default {
-        props: ["product"]
+        props: ["product"],
+
+        components: {EditModalComp}
     }
 </script>
 
