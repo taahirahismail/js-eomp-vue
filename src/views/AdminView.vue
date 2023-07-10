@@ -4,8 +4,8 @@
   >
     <h1>Our Books!</h1>
   </div>
-  
-  <add-modal-comp/>
+
+  <add-modal-comp />
   <table class="m-2 p-2">
     <thead>
       <tr class="blue-bg">
@@ -24,13 +24,7 @@
       />
     </tbody>
     <tbody v-else>
-      <div class="w-100 mx-auto spinner">
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
-</div>
+      <loader-comp/>
     </tbody>
   </table>
 </template>
@@ -38,6 +32,7 @@
 <script>
 import AdminTableComp from "@/components/AdminTable-comp.vue";
 import AddModalComp from "@/components/AddModal-comp.vue";
+import LoaderComp from "@/components/Loader-comp.vue";
 
 export default {
   computed: {
@@ -50,7 +45,7 @@ export default {
     this.$store.dispatch("getProducts");
   },
 
-  components: { AdminTableComp, AddModalComp },
+  components: { AdminTableComp, AddModalComp, LoaderComp },
 };
 </script>
 
@@ -61,57 +56,5 @@ export default {
 
 .blue-bg {
   background-color: #73a9ad !important;
-}
-
-.spinner {
-  position: relative;
-  width: 33.6px;
-  height: 33.6px;
-  perspective: 67.2px;
-}
-
-.spinner div {
-  width: 100%;
-  height: 100%;
-  background: #73a9ad;
-  position: absolute;
-  left: 50%;
-  transform-origin: left;
-  animation: spinner-16s03x 2s infinite;
-}
-
-.spinner div:nth-child(1) {
-  animation-delay: 0.15s;
-}
-
-.spinner div:nth-child(2) {
-  animation-delay: 0.3s;
-}
-
-.spinner div:nth-child(3) {
-  animation-delay: 0.45s;
-}
-
-.spinner div:nth-child(4) {
-  animation-delay: 0.6s;
-}
-
-.spinner div:nth-child(5) {
-  animation-delay: 0.75s;
-}
-
-@keyframes spinner-16s03x {
-  0% {
-    transform: rotateY(0deg);
-  }
-
-  50%, 80% {
-    transform: rotateY(-180deg);
-  }
-
-  90%, 100% {
-    opacity: 0;
-    transform: rotateY(-180deg);
-  }
 }
 </style>

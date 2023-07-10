@@ -37,11 +37,14 @@
     />
   </div>
 
-  <div v-else>Loading...</div>
+  <div v-else>
+    <loader-comp/>
+  </div>
 </template>
 
 <script>
 import ProductCardComp from "@/components/ProductCard-comp.vue";
+import LoaderComp from '@/components/Loader-comp.vue';
 
 export default {
   methods: {
@@ -62,7 +65,7 @@ export default {
     this.$store.dispatch("getProducts");
   },
 
-  components: { ProductCardComp },
+  components: { ProductCardComp, LoaderComp },
 };
 </script>
 

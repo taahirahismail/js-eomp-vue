@@ -3,8 +3,12 @@ import { createStore } from 'vuex'
 export default createStore({
   state: {
     products: null,
-    product: null
+    product: null,
+    adminIn: null,
+    adminOut: null,
+    adminOuts: null
   },
+
   mutations: {
     setProducts: (state, products) => {
       state.products = products;
@@ -12,6 +16,16 @@ export default createStore({
     setProduct: (state, product) => {
       state.product = product;
     },
+    setAdminIn: (state, adminIn) => {
+      state.adminIn = adminIn
+    },
+    setAdminOut: (state, adminOut) => {
+      state.adminOut = adminOut
+    },
+    setAdminOuts: (state, adminOuts) => {
+      state.adminOuts = adminOuts
+    },
+
     sortProductsHighToLow: (state) => {
       state.products.sort((a, b) => {
         return a.price - b.price;
@@ -22,71 +36,13 @@ export default createStore({
         return b.price - a.price;
       })
     },
-    addBook: (state) => {
-        try {
-        const img = document.getElementById("book-cover").value;
-        const name = document.getElementById("book-title").value;
-        const author = document.getElementById("book-author").value;
-        const price = parseInt(document.getElementById("book-price").value);
-        const quantity = parseInt(document.getElementById("quantity").value);
-        const genre = document.getElementById("book-genre").value;
-    
-        let id =
-          state.products.map((book) => book.id).at(-1) >= 1
-            ? state.products.map((book) => book.id).at(-1)
-            : 0;
-        id++;
-    
-        state.products.push({
-          id,
-          img,
-          name,
-          author,
-          price,
-          quantity,
-          genre,
-        });
-      } catch (error) {
-        console.error("Unable to add new book:", error);
-      }
-    },
 
-    editBook: (state) => {
-      try {
-        document.getElementById("book-cover-edit").value = book.img;
-        document.getElementById("book-title-edit").value = book.name;
-        document.getElementById("book-author-edit").value = book.author;
-        document.getElementById("book-price-edit").value = book.price;
-        document.getElementById("quantity-edit").value = book.quantity;
-        document.getElementById("book-genre-edit").value = book.genre;
-    
-          state.product.img = document.getElementById("book-cover-edit").value;
-          state.product.name = document.getElementById("book-title-edit").value;
-          state.product.author = document.getElementById("book-author-edit").value;
-          state.product.price = parseFloat(document.getElementById("book-price-edit").value);
-          state.product.quantity = parseInt(document.getElementById("quantity-edit").value);
-          state.product.genre = document.getElementById("book-genre-edit").value;
-
-      } catch (error) {
-        console.error("Unable to update book:", error);
-      }
-    }
+    // deleteBook: (state, id) => {
+    //   state.products.splice(id, 1);
+    // },
   },
-  actions: {
-    // async getProducts (context) {
-    //   try {
-    //     let res = await fetch("https://taahirahismail.github.io/api/js-eomp-data.json");
-    //     let {products} = await res.json();
-    //     if (products) {
-    //       context.commit("setProducts", products)
-    //     } else {
-    //       context.commit("setProducts", products)
-    //     }
-    //   } catch(e) {
-    //     console.log(e.message)
-    //   }
-    // }
 
+  actions: {
     getProducts: async (context) => {
       fetch("https://taahirahismail.github.io/api/js-eomp-data.json")
       .then ((res) => res.json())
@@ -96,6 +52,25 @@ export default createStore({
       fetch("https://taahirahismail.github.io/api/js-eomp-data.json/" + id)
       .then((res) => res.json())
       .then((product) => context.commit("setProduct", product));
+    },
+    getAdminIn: async (context, payload) => {
+      const {id, img, name, author, price, genre } = payload;
+      await fetch("https://taahirahismail.github.io/api/js-eomp-data.json", {
+        method: "POST",
+        body: json.stringify({
+          id: id,
+          img: img,
+          name: name,
+          author: author,
+          price: price,
+          genre: genre,
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8"
+        }
+      })
+      .then((res) => res.json())
+      .then(() => context.dispatch("getProducts"))
     }
   }
 })
